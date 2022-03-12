@@ -30,3 +30,7 @@ a:hover {
 .second-color{
     color:#949cb0;
 }
+.logOut{
+	cursor: pointer;
+	color: #fff !important;
+}

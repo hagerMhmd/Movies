@@ -2,7 +2,9 @@ import axios from 'axios'
 import Joi from 'joi'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-export default function Login() {
+
+
+export default function Login(props) {
   let navigate = useNavigate()
 
   const [user, setUser] = useState({
@@ -19,7 +21,7 @@ export default function Login() {
     let myUser = { ...user }
     myUser[e.target.name] = e.target.value
     setUser(myUser)
-    console.log(user);
+    // console.log(user);
   }
 
   function submitLogin(e) {
@@ -37,6 +39,8 @@ export default function Login() {
   async function checkApi() {
     let { data } = await axios.post('https://route-egypt-api.herokuapp.com/signin', user)
     if (data.message === 'success') {
+      localStorage.setItem('userToken', data.token)
+      props.getUserData()
       navigate('/home')
       setIsloading(false)
     } else {
