@@ -39,9 +39,9 @@ export default function Login(props) {
   async function checkApi() {
     let { data } = await axios.post('https://route-egypt-api.herokuapp.com/signin', user)
     if (data.message === 'success') {
-      localStorage.setItem('userToken', data.token)
+      localStorage.setItem('moviesUserToken', data.token)
       props.getUserData()
-      navigate('/home')
+      navigate('/movies')
       setIsloading(false)
     } else {
       let index = data.message.lastIndexOf(":")

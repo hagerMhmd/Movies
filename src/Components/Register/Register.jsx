@@ -45,7 +45,7 @@ export default function Register() {
     let { data } = await axios.post('https://route-egypt-api.herokuapp.com/signup', user)
     if (data.message === 'success') {
       console.log('success');  // navigate to home page
-      navigate('/login')
+      navigate('/movies')
       setIsloading(false)
     } else {
       let index = data.message.lastIndexOf(":")

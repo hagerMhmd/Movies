@@ -13,16 +13,16 @@ export default function NavBar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {props.userDate ? <>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="home">Home</Link>
+                <Link className="nav-link" aria-current="page" to="movies">Movies</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="tv">Tv</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="people">People</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="about">About</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="network">Network</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="movies">Movies </Link>
               </li>
             </> : ''}
 
