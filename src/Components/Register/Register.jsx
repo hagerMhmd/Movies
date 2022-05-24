@@ -18,14 +18,11 @@ export default function Register() {
   const [isloading, setIsloading] = useState(false)
   const [errorList, setErrorList] = useState([])
 
-
-
   function getUser(e) {
     let myUser = { ...user }
     myUser[e.target.name] = e.target.value
     setuser(myUser)
   }
-
 
   function submitRegister(e) {
     e.preventDefault()
@@ -55,14 +52,13 @@ export default function Register() {
     }
   }
 
-
   function validateRegisterForm() {
     let schema = Joi.object({
-      first_name: Joi.string().alphanum().min(3).max(10).required(),
-      last_name: Joi.string().alphanum().min(3).max(10).required(),
+      first_name: Joi.string().min(3).max(10).required(),
+      last_name: Joi.string().min(3).max(10).required(),
       age: Joi.number().min(16).max(80).required(),
       email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-      password: Joi.string().pattern(/^[A-Z][a-z]{10,25}$/)
+      password: Joi.string().pattern(/[A-Za-z0-9]{10,25}$/)
       // password: Joi.string().min(3).max(15).required()
     })
     return schema.validate(user, { abortEarly: false })

@@ -22,7 +22,7 @@ export default function People() {
           <div className={`${styles.img} position-relative`}>
             <img src={baseImgUrl + person.profile_path} className='w-100' alt="" />
             <h5 className='py-3'>{person.name}</h5>
-            <span className={`${styles.rating} position-absolute bg-info`}>{person.known_for[0].vote_average}</span>
+            {/* <span className={`${styles.rating} position-absolute bg-info`}>{person.known_for[0].vote_average}</span> */}
           </div>
         </div>
       )}

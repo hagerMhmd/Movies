@@ -5,6 +5,7 @@ import Movies from './Components/Movies/Movies.jsx'
 import About from './Components/About/About.jsx'
 import People from './Components/People/People.jsx'
 import Tv from './Components/Tv/Tv.jsx'
+import Home from './Components/Home/Home';
 import Login from './Components/Login/Login.jsx'
 import Register from './Components/Register/Register.jsx'
 import { useEffect, useState } from 'react';
@@ -51,6 +52,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Register />} />
           <Route path='movies' element={<ProtectedRoute><Movies /></ProtectedRoute>} />
+          <Route path='home' element={<Home/>}/>
           <Route path='about' element={<About />} />
           <Route path='moviedetails' element={<MovieDetails />} >
             <Route path=':id' element={<MovieDetails />} />

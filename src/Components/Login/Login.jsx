@@ -54,7 +54,7 @@ export default function Login(props) {
   function validateRegisterForm() {
     let schema = Joi.object({
       email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-      password: Joi.string().pattern(/^[A-Z][a-z]{10,25}$/)
+      password: Joi.string().pattern(/[A-Za-z0-9]{10,25}$/)
     })
     return schema.validate(user, { abortEarly: false })
   }
