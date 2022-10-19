@@ -15,7 +15,6 @@ export default function People() {
           <div className={`${styles.brdr} mt-4`}></div>
         </div>
       </div>
-<<<<<<< HEAD
       {trendingPerson.length > 0 ?
           trendingPerson.map((person, index) =>
             <div className="col-md-2 my-3 " key={index}>
@@ -28,15 +27,6 @@ export default function People() {
         :
         <div className='vh-100 d-flex justify-content-center align-items-center'>
           <i class="fa-solid fa-spin fa-circle-notch fs-1"></i>
-=======
-      {trendingPerson.map((person, index) =>
-        <div className="col-md-2 my-3 " key={index}>
-          <div className={`${styles.img} position-relative`}>
-            <img src={baseImgUrl + person.profile_path} className='w-100' alt="" />
-            <h5 className='py-3'>{person.name}</h5>
-            {/* <span className={`${styles.rating} position-absolute bg-info`}>{person.known_for[0].vote_average}</span> */}
-          </div>
->>>>>>> 63fbf9ca720d7a16d6120f0ab720ed23bfb3401b
         </div>
       }
     </div>
