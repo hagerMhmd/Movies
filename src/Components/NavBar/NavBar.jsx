@@ -27,12 +27,6 @@ export default function NavBar(props) {
             </> : ''}
           </ul>
           <ul className="navbar-nav ms-auto mb-2 me-5 mb-lg-0 ">
-            <li className="nav-item d-flex align-items-center me-3 ">
-              <i className="fa-brands mx-2 fs-5 fa-instagram"></i>
-              <i className="fa-brands mx-2 fs-5 fa-facebook-f"></i>
-              <i className="fa-brands mx-2 fs-5 fa-youtube"></i>
-              <i className="fa-brands mx-2 fs-5 fa-spotify"></i>
-            </li>
             {props.userDate ?
               <>
                 <li className="nav-item">
