@@ -10,11 +10,35 @@ export default function Register() {
   const [error, seterror] = useState('')
   const [isloading, setIsloading] = useState(false)
   const [errorList, setErrorList] = useState([])
+<<<<<<< HEAD
   // -------------------- get user data from inputs -------------------
   function getUser({ target }) {
     setUser({ ...user, [target.name]: target.value })
   }
   // ----------------------- Register Api Integration -----------------------
+=======
+
+  function getUser(e) {
+    let myUser = { ...user }
+    myUser[e.target.name] = e.target.value
+    setuser(myUser)
+  }
+
+  function submitRegister(e) {
+    e.preventDefault()
+    setIsloading(true)
+
+    let validationRestult = validateRegisterForm(user)
+    if (validationRestult.error) {
+      setIsloading(false)
+      setErrorList(validationRestult.error.details)
+      console.log(errorList);
+    } else {
+      checkApi()
+    }
+  }
+
+>>>>>>> 63fbf9ca720d7a16d6120f0ab720ed23bfb3401b
   async function checkApi() {
     let { data } = await axios.post('https://route-egypt-api.herokuapp.com/signup', user)
     if (data.message === 'success') {
@@ -28,14 +52,22 @@ export default function Register() {
       setIsloading(false)
     }
   }
+<<<<<<< HEAD
   //-------------------- validate form -------------------
+=======
+
+>>>>>>> 63fbf9ca720d7a16d6120f0ab720ed23bfb3401b
   function validateRegisterForm() {
     let schema = Joi.object({
       first_name: Joi.string().min(3).max(10).required(),
       last_name: Joi.string().min(3).max(10).required(),
       age: Joi.number().min(16).max(80).required(),
       email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+<<<<<<< HEAD
       password: Joi.string().pattern(/[A-Za-z0-9]{8,25}$/)
+=======
+      password: Joi.string().pattern(/[A-Za-z0-9]{10,25}$/)
+>>>>>>> 63fbf9ca720d7a16d6120f0ab720ed23bfb3401b
       // password: Joi.string().min(3).max(15).required()
     })
     return schema.validate(user, { abortEarly: false })

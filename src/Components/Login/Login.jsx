@@ -15,7 +15,7 @@ export default function Login(props) {
   function getUser({ target }) {
     setUser({ ...user, [target.name]: target.value })
   }
-  // ----------------------- Login Api Integration -----------------------
+  // ----------------------- Movie Api Integration -----------------------
   async function checkApi() {
     let { data } = await axios.post('https://route-egypt-api.herokuapp.com/signin', user)
     if (data.message === 'success') {

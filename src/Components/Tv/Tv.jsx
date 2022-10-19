@@ -21,7 +21,7 @@ export default function Tv() {
             <Link to={`/movieDetails/${tv.id}`}>
               <img src={baseImgUrl + tv.poster_path} className='w-100' alt="" />
               <h5 className='py-3'>{tv.name.substr(0, 16)}</h5>
-              <span className={`${styles.rating} position-absolute bg-info`}>{tv.vote_average}</span>
+              {/* <span className={`${styles.rating} position-absolute bg-info`}>{tv.vote_average}</span> */}
             </Link>
           </div>
         </div>
