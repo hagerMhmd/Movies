@@ -1,35 +1,9 @@
-
 .brdr{
     height: 1px;
-    /* width: 30px; */
     background-color: #a8a8a83d;
     color: #24baef;
 
 }
-/* .brdr-top-width{
-    width: 20%;
-}
-.brdr-bottom-width{
-    width: 100%;
-} */
-
-
-/* .img  {
-    max-height: 340px !important;
-} */
-/* @media screen and (max-width: 1200px) {
-    .img  {
-        max-height: 1000px !important;
-    }
-} */
-
-
-
-/* @media screen and (min-width: 1200px) and (max-width:1300px) {
-    .img  {
-        max-height: 340px !important;
-    }
-} */
 
 .rating{
     width: 50px !important;

@@ -25,7 +25,6 @@ export default function NavBar(props) {
                 <Link className="nav-link" aria-current="page" to="about">About</Link>
               </li>
             </> : ''}
-
           </ul>
           <ul className="navbar-nav ms-auto mb-2 me-5 mb-lg-0 ">
             <li className="nav-item d-flex align-items-center me-3 ">
@@ -54,8 +53,3 @@ export default function NavBar(props) {
     </nav>
   </>
 }
-
-
-
-
-// https://route-egypt-api.herokuapp.com

@@ -4,9 +4,9 @@ import styles from '../style.module.css'
 import { Link } from 'react-router-dom'
 
 export default function Tv() {
-  let { trendingTvShows, baseImgUrl } = useContext(MediaContext)
+  const { trendingTvShows, baseImgUrl } = useContext(MediaContext)
   return <>
-    {trendingTvShows ? <div className="row align-items-center my-3">
+    {trendingTvShows.length > 0 ? <div className="row align-items-center my-3">
       <div className="col-md-4 d-flex align-items-center ">
         <div>
           <div className={`${styles.brdr} w-25 mb-4`}></div>
@@ -26,6 +26,11 @@ export default function Tv() {
           </div>
         </div>
       )}
-    </div> : ''}
+    </div>
+      :
+      <div className='vh-100 d-flex justify-content-center align-items-center'>
+        <i class="fa-solid fa-spin fa-circle-notch fs-1"></i>
+      </div>
+    }
   </>
 }

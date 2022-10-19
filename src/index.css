@@ -34,3 +34,12 @@ a:hover {
 	cursor: pointer;
 	color: #fff !important;
 }
+.about-bg{
+	background-image: url(./Components/imgs/cJYLon9ejKJV7ua03ab8Tj9u067.jpg);
+	background-position: 100% 100%;
+	background-size: cover;
+}
+.bg-layer{
+	background-color: rgba(31.5, 31.5, 10.5, 0.65);
+	padding: 7rem;
+}

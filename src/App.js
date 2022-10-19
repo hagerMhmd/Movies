@@ -51,13 +51,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Register />} />
           <Route path='movies' element={<ProtectedRoute><Movies /></ProtectedRoute>} />
-          <Route path='about' element={<About />} />
+          <Route path='about' element={<ProtectedRoute><About /></ProtectedRoute>}  />
           <Route path='moviedetails' element={<MovieDetails />} >
             <Route path=':id' element={<MovieDetails />} />
           </Route>
           <Route path='people' element={<People />} />
           <Route path='tv' element={<Tv />} />
-          <Route path='movies' element={<People />} />
+          {/* <Route path='movies' element={<People />} /> */}
           <Route path='login' element={<Login getUserData={getUserData} />} />
           <Route path='register' element={<Register />} />
           <Route path='*' element={<h2>404</h2>} />

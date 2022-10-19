@@ -1,17 +1,12 @@
-// import axios from 'axios'
-// import React, { useEffect, useState } from 'react'
 import styles from '../style.module.css'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { MediaContext } from '../../MediaContex'
 
-
-
 export default function Movies() {
-
-  let { trendingMovies, baseImgUrl } = useContext(MediaContext)
+  const { trendingMovies, baseImgUrl } = useContext(MediaContext)
   return <>
-    {trendingMovies ? <div className="row align-items-center my-3">
+    {trendingMovies.length > 0 ? <div className="row align-items-center my-3">
       <div className="col-md-4 d-flex align-items-center ">
         <div>
           <div className={`${styles.brdr} w-25 mb-4`}></div>
@@ -31,45 +26,11 @@ export default function Movies() {
           </div>
         </div>
       )}
-    </div> : <div className='vh-100 d-flex justify-content-center bg-danger align-items-center'>
-      <i className='fas fa-spin fa-spinner fs-1'></i>
     </div>
+      :
+      <div className='vh-100 d-flex justify-content-center align-items-center'>
+        <i class="fa-solid fa-spin fa-circle-notch fs-1"></i>
+      </div>
     }
-
-
-
-
-
   </>
 }
-
-
-
-
-
-
-
-// f1aca93e54807386df3f6972a5c33b50
-
-
-
-
-
-
-  // let baseImgUrl = 'https://image.tmdb.org/t/p/original'
-
-  // const [trendingMovies, setTrendingMovies] = useState([])
-  // const [trendingTvShows, setTrendingTvShows] = useState([])
-  // const [trendingPerson, setTrendingPerson] = useState([])
-
-
-  // async function getTrendingItems(mediaType, callback) {
-  //   let { data } = await axios.get(`https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=f1aca93e54807386df3f6972a5c33b50`)
-  //   callback(data.results.splice(0, 10))
-  //   // console.log("data results =>", data.results.splice(0, 10));
-  // }
-  // useEffect(() => {
-  //   getTrendingItems('movie', setTrendingMovies)
-  //   getTrendingItems('tv', setTrendingTvShows)
-  //   getTrendingItems('person', setTrendingPerson)
-  // }, [])

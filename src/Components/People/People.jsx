@@ -4,9 +4,7 @@ import { MediaContext } from '../../MediaContex'
 import styles from '../style.module.css'
 
 export default function People() {
-
-  let {trendingPerson ,  baseImgUrl} = useContext(MediaContext)
-
+  const { trendingPerson, baseImgUrl } = useContext(MediaContext)
   return <>
     <div className="row align-items-center my-3">
       <div className="col-md-4 d-flex align-items-center ">
@@ -17,15 +15,20 @@ export default function People() {
           <div className={`${styles.brdr} mt-4`}></div>
         </div>
       </div>
-      {trendingPerson.map((person, index) =>
-        <div className="col-md-2 my-3 " key={index}>
-          <div className={`${styles.img} position-relative`}>
-            <img src={baseImgUrl + person.profile_path} className='w-100' alt="" />
-            <h5 className='py-3'>{person.name}</h5>
-            <span className={`${styles.rating} position-absolute bg-info`}>{person.known_for[0].vote_average}</span>
-          </div>
+      {trendingPerson.length > 0 ?
+          trendingPerson.map((person, index) =>
+            <div className="col-md-2 my-3 " key={index}>
+              <div className={`${styles.img} position-relative`}>
+                <img src={baseImgUrl + person.profile_path} className='w-100' alt="" />
+                <h5 className='py-3'>{person.name}</h5>
+              </div>
+            </div>
+          )
+        :
+        <div className='vh-100 d-flex justify-content-center align-items-center'>
+          <i class="fa-solid fa-spin fa-circle-notch fs-1"></i>
         </div>
-      )}
+      }
     </div>
   </>
 }
